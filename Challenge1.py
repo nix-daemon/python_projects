@@ -1,0 +1,16 @@
+import sys
+def myFunc():
+    print(sys.arg1)
+    arg1 = str(sys.argv[1])
+    arg2 = str(sys.argv[2])
+    str1 = arg1[0] + arg2[2] + arg2[-1] + str(len(arg1))
+    print(arg1 + " " + arg2)
+    print(str1)
+    print()
+    print()
+    print(len(sys.argv))
+    print(arg1[1:4])
+    print("use of 'quotation' marks")
+    userInput = input("please enter:")
+    print(userInput[1])
+myFunc()

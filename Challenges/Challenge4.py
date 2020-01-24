@@ -6,6 +6,13 @@
 #how many dozen you're at("1 dozen" for 12, "2 dozen" for 24, etc.)
 #Lastly, print the sum of the numbers between 1 and the argument (inclusive).
 def loop(num):
-  for i in range(1, (num+1)):
-    print(i)
-loop(num)
+num_list = range(1, num + 1)
+final_sum = sum(num_list)
+     for i in range(1, (num+1)):
+         if i % 12 == 0:
+             print("{} dozen".format(i/12))
+         elif i % 3 == 0:
+             print("triangle")
+         elif i % 4 == 0:
+             print("square")
+      print(final_sum)

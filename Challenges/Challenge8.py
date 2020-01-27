@@ -6,7 +6,18 @@
 #this percentage, rounding down. Ignore capitalization: “The” and “the” are the same word.
 #Writes the first ten words of the file (as determined by whitespace) to a new file named "challenge9_output.txt”.
 #Assume the file will be written to the same directory where the challenge9.py file is located.
+from collections import Counter
 import sys
-arg1 = sys.argv[1] >>> filename.txt
+arg1 = "C:\\Users\\170A\\Documents\\GitHub\\170A-Python\\Challenges\\large.txt"
 with open(arg1) as f:
-    do your work here
+    data = f.read()
+    line = f.readline()
+    letters = Counter(data.replace(" ", "").upper()).most_common()
+    x = letters[0]
+    words = data.split()
+Counter = Counter(words)
+most_occur = Counter.most_common(1)
+print("{} is the most common letter. It occurs {} times.".format(x[0], x[1]))
+print(line)
+#def count_the(data):
+

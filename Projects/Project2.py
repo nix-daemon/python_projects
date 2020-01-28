@@ -11,3 +11,10 @@
 #"BANana4!anaNAB"
 #Testing with testpasswords.pyc:
 #> python testpasswords.pyc --module password_functions.py --generator password_generator
+import string
+from random import *
+def password_generator(length):
+    characters = string.ascii_uppercase + string.ascii_lowercase  + string.digits + string.punctuation
+    password =  "".join(choice(characters) for x in range(randint(8, 16)))
+    print(password)
+password_generator(14)

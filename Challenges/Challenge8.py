@@ -20,5 +20,6 @@ def readFunc(arg1):
         thePercent = round((the_occur[0][1] / totalNumOfWords) * 100)
         print("{} is the most common letter. It occurs {} times.".format(x[0], x[1]))
         print("The word 'The' is {}% of the words.".format(thePercent))
-        print(" ".join(map(str, words[0:9])))
+        newFile = open("challenge8_output.txt", "w")
+        newFile.write(" ".join(map(str, words[0:10])))
 readFunc(sys.argv[1])

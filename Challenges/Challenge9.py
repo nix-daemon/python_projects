@@ -13,6 +13,7 @@
 #challenge12.py "abba"
 #Output
 #""
+import sys
 def nonRepeatingCharacter(someStr):
     order = []
     counts = {}
@@ -22,7 +23,7 @@ def nonRepeatingCharacter(someStr):
             counts[letter.lower()] += 1
         else:
             counts[letter] = 1 
-            order.append(letter.lower())
+            order.append(letter)
     while items < len(counts):
         for letter in order:
             if counts[letter] == 1:
@@ -34,4 +35,4 @@ def nonRepeatingCharacter(someStr):
             else:
                 return " "
     return " "
-print(nonRepeatingCharacter("streSS"))
+print(nonRepeatingCharacter(sys.argv[1]))

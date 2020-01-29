@@ -8,16 +8,17 @@
 #Assume the file will be written to the same directory where the challenge9.py file is located.
 from collections import Counter
 import sys
-arg1 = "C:\\Users\\170A\\Documents\\GitHub\\170A-Python\\Challenges\\large.txt"
-with open(arg1) as f:
-    data = f.read()
-    line = f.readline()
-    letters = Counter(data.replace(" ", "").upper()).most_common()
-    x = letters[0]
-    words = data.split()
-Counter = Counter(words)
-most_occur = Counter.most_common(1)
-print("{} is the most common letter. It occurs {} times.".format(x[0], x[1]))
-print(line)
-#def count_the(data):
-
+def readFunc(arg1):
+    with open(arg1) as f:
+        data = f.read()
+        letters = Counter(data.replace(" ", "").upper()).most_common()
+        x = letters[0]
+        words = data.split()
+        totalNumOfWords = len(words)
+        totalOccur = Counter(words)
+        the_occur = totalOccur.most_common(1)
+        thePercent = round((the_occur[0][1] / totalNumOfWords) * 100)
+        print("{} is the most common letter. It occurs {} times.".format(x[0], x[1]))
+        print("The word 'The' is {}% of the words.".format(thePercent))
+        print(" ".join(map(str, words[0:9])))
+readFunc(sys.argv[1])

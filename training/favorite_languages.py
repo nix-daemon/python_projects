@@ -19,3 +19,11 @@ for name in sorted(favorite_languages.keys()):
 print("The following languages have been mentioned:")
 for language in set(favorite_languages.values()):
 	print(language.title())
+
+new_people = ['jen', 'sarah', 'john']
+
+for name in new_people:
+	if name in favorite_languages:
+		print(f"{name.title()}, thank you for responding.")
+	else:
+		print(f"{name.title()}, please take our poll.")

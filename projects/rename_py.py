@@ -3,7 +3,10 @@ import os, sys
 def listdir():
     """Gets a listing of the scripts directory, and excludes the script"""
     orig_files = os.listdir()
-    orig_files.remove('rename_py.py')
+    if 'rename_py.py' in orig_files:
+        orig_files.remove('rename_py.py')
+    if 'rename_py.cpython-311.pyc' in orig_files:
+        orig_files.remove('rename_py.cpython-311.pyc')
     return orig_files
 
 def old_extension_list(old_extension, new_extension):
@@ -41,12 +44,14 @@ def add_file_extension(orig_files, new_files):
 def conversion_report(orig_files, new_files):
     """Prints a report detailing what files were identified and then renamed
     with the new extention"""
-    print("Old files detected were: ")
-    for file in orig_files:
-        print(file)
-    print("\nThey have now been renamed to: ")
-    for file in new_files:
-        print(file)
+    if orig_files:
+        print("Old files detected were: ")
+        for file in orig_files:
+            print(file)
+    if new_files:
+        print("\nThey have now been renamed to: ")
+        for file in new_files:
+            print(file)
 
 orig_files = listdir()
 old_extension_list(sys.argv[1], sys.argv[2])
